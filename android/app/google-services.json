@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "50528958390",
+    "project_id": "carshare-58d25",
+    "storage_bucket": "carshare-58d25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50528958390:android:263dfe57cf55eb65ec7317",
+        "android_client_info": {
+          "package_name": "com.yefersonhuarachi.carshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50528958390-lf5n8jsblm60ln6egeh4mmb250pg3qc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALd082LUAWMJDnCZnHb39e23ZPFxdccA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50528958390-lf5n8jsblm60ln6egeh4mmb250pg3qc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

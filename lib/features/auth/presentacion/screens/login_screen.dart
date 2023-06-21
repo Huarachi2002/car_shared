@@ -2,12 +2,13 @@ import 'dart:async';
 import 'package:car_share/features/auth/presentacion/providers/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:car_share/features/auth/presentacion/screens/screens.dart';
 import 'package:car_share/features/shared/shared.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   static const name = "login-screen";
-  const LoginScreen({super.key});
+  // const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class LoginScreen extends StatelessWidget {
                     const BorderRadius.only(topLeft: Radius.circular(100)),
               ),
               child: const _LoginForm(),
-            )
+            ),
           ],
         ),
       ))),
@@ -62,9 +63,9 @@ class _LoginForm extends StatelessWidget {
         key: login_provider.formKey,
         child: Column(
           children: [
-            const SizedBox(height: 50),
+            const SizedBox(height: 20),
             Text('Iniciar Sesión', style: textStyles.titleLarge),
-            const SizedBox(height: 90),
+            const SizedBox(height: 50),
             CustomTextFormField(
               label: 'Usuario',
               keyboardType: TextInputType.text,
@@ -78,7 +79,7 @@ class _LoginForm extends StatelessWidget {
                 return null;
               },
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             CustomTextFormField(
               label: 'Contraseña',
               obscureText: true,
@@ -90,7 +91,7 @@ class _LoginForm extends StatelessWidget {
                 return null;
               },
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             SizedBox(
                 width: double.infinity,
                 height: 60,
@@ -104,8 +105,12 @@ class _LoginForm extends StatelessWidget {
                           barrierDismissible: false,
                           builder: (context) {
                             Timer(const Duration(seconds: 1), () {
-                              // Navigator.of(context).pop();
-                              context.go('/home');
+                              Navigator.of(context).pop();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeMapScreen()),
+                              );
                             });
                             return AlertDialog(
                               title: const Text('Usuario Validado'),
@@ -136,7 +141,7 @@ class _LoginForm extends StatelessWidget {
                     }
                   },
                 )),
-            const Spacer(flex: 2),
+            const Spacer(flex: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -146,7 +151,7 @@ class _LoginForm extends StatelessWidget {
                     child: const Text('Crea una aquí'))
               ],
             ),
-            const Spacer(flex: 1),
+            const Spacer(flex: 10),
           ],
         ),
       ),

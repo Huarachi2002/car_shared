@@ -1,8 +1,9 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package='com.yefersonhuarachi.car_share'>
     <application
         android:label="car_share"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+ 
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -29,5 +30,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+            <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBXK0_IOeU2iJ3LN7pFQsDMR-CVrV7fkOU"/>
     </application>
 </manifest>

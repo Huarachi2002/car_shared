@@ -7,6 +7,8 @@ class UserProvider extends ChangeNotifier {
   String _email = "";
   String _telefono = "";
   String _image = "";
+  String _imageHorario = "";
+  String _calificacion = "";
   List<String> _role = [];
   bool _sentRequest = false;
   String _token = "";
@@ -67,6 +69,11 @@ class UserProvider extends ChangeNotifier {
 
   set image(image) {
     _image = image;
+    notifyListeners();
+  }
+
+  set imageHorario(imageHorario) {
+    _imageHorario = imageHorario;
     notifyListeners();
   }
 

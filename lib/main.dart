@@ -1,27 +1,44 @@
-import 'package:car_share/features/auth/presentacion/providers/providers.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:car_share/config/config.dart';
+import 'package:car_share/features/auth/presentacion/providers/login_form_provider.dart';
+import 'features/auth/presentacion/states/app_state.dart';
+import 'package:provider/provider.dart';
 
-void main() async {
-  await Environment.initEnvironment();
-
-  runApp(const MainApp());
+// import 'config/config.dart';
+void main() {
+  return runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider.value(
+        value: AppState(),
+      )
+    ],
+    child: MyApp(),
+  ));
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => LoginFormProvider()),
+        ChangeNotifierProvider(
+          create: (_) => LoginFormProvider(),
+        )
       ],
       child: MaterialApp.router(
+        title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.white,
+            elevation: 0,
+          ),
+        ),
         routerConfig: appRouter,
-        theme: AppTheme().getTheme(),
       ),
     );
   }
